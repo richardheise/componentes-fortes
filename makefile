@@ -39,11 +39,11 @@ CFLAGS  = -std=c99 \
 .PHONY : all clean
 
 #------------------------------------------------------------------------------
-all : teste
+all : test
 
-teste : teste.o grafo.o
+test : test.o graph.o
 	$(CC) $(CFLAGS) -o $@ $^ -lcgraph
 
 #------------------------------------------------------------------------------
 clean :
-	$(RM) teste *.o
+	$(RM) test *.o

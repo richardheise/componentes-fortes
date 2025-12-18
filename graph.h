@@ -1,27 +1,27 @@
-#ifndef _GRAFO_H
-#define _GRAFO_H
+#ifndef _GRAPH_H
+#define _GRAPH_H
 
 #include <graphviz/cgraph.h>
 
 //------------------------------------------------------------------------------
-typedef Agraph_t *grafo;
-typedef Agnode_t *vertice;
+typedef Agraph_t *graph;
+typedef Agnode_t *node;
 
 // -----------------------------------------------------------------------------
 // devolve o grafo lido da entrada padrão (formato dot)
 
-grafo le_grafo(void);
+graph read_graph(void);
 
 // -----------------------------------------------------------------------------
 // desaloca g
 
-int destroi_grafo(grafo g);
+int destroy_graph(graph g);
 
 // -----------------------------------------------------------------------------
 // escreve g na saída padrão em formato dot
 // devolve g
 
-grafo escreve_grafo(grafo g);
+void write_graph(graph g);
 
 //------------------------------------------------------------------------------
 // acrescenta à lista de subgrafos de g cada um de seus componentes fortes
@@ -31,7 +31,7 @@ grafo escreve_grafo(grafo g);
 //
 // devolve g
 
-grafo decompoe(grafo g);
+graph decompose_strong_components(graph g);
 
 
 #endif
